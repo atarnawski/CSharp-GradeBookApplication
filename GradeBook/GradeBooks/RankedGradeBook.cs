@@ -15,7 +15,7 @@ namespace GradeBook.GradeBooks
         {
             if(Students.Count < 5)
             {
-                throw InvalidOperationException;
+                throw new InvalidOperationException();
             }
 
             return 'F';
