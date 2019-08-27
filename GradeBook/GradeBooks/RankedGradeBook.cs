@@ -35,7 +35,7 @@ namespace GradeBook.GradeBooks
                 averageList.Sort();
                 foreach(var averageGradeList in averageList)
                 {
-                    if(averageGrade < averageGradeList) { break; }
+                    if(averageGrade <= averageGradeList) { break; }
                     counter++;
                 }
                 if (counter <= A) { return 'A'; }
