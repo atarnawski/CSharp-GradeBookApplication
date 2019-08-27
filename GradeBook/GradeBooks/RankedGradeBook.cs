@@ -15,6 +15,13 @@ namespace GradeBook.GradeBooks
         {
             var counter = 0;
             var listPosition = 0;
+            var A = 0.2 * Students.Count;
+            var B = 0.4 * Students.Count;
+            var C = 0.6 * Students.Count;
+            var D = 0.8 * Students.Count;
+
+
+
             if (Students.Count < 5)
             {
                 throw new InvalidOperationException();
@@ -32,10 +39,10 @@ namespace GradeBook.GradeBooks
                     if(averageGrade < averageGradeList) { listPosition = counter; }
                     counter++;
                 }
-                if(listPosition <= 0.2 * Students.Count) { return 'A'; }
-                if (listPosition <= 0.4 * Students.Count) { return 'B'; }
-                if (listPosition <= 0.6 * Students.Count) { return 'C'; }
-                if (listPosition <= 0.8 * Students.Count) { return 'D'; }
+                if(listPosition <= A) { return 'A'; }
+                if (listPosition > A || listPosition <= B) { return 'B'; }
+                if (listPosition > B || listPosition <= C) { return 'C'; }
+                if (listPosition > C || listPosition <= D) { return 'D'; }
             }
             return 'F';
         }
