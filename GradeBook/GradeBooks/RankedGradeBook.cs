@@ -32,10 +32,10 @@ namespace GradeBook.GradeBooks
                     if(averageGrade < averageGradeList) { listPosition = counter; }
                     counter++;
                 }
-                if(listPosition < 0.2 * Students.Count) { return 'A'; }
-                if (listPosition < 0.4 * Students.Count) { return 'B'; }
-                if (listPosition < 0.6 * Students.Count) { return 'C'; }
-                if (listPosition < 0.8 * Students.Count) { return 'D'; }
+                if(listPosition <= 0.2 * Students.Count) { return 'A'; }
+                if (listPosition <= 0.4 * Students.Count) { return 'B'; }
+                if (listPosition <= 0.6 * Students.Count) { return 'C'; }
+                if (listPosition <= 0.8 * Students.Count) { return 'D'; }
             }
             return 'F';
         }
