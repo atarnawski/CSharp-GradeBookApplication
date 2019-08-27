@@ -38,8 +38,8 @@ namespace GradeBook.GradeBooks
                     counter++;
                 }
                 percentage = counter / Students.Count;
-                if (percentage <= A) { return 'A'; }
-                if (percentage <= 2*A) { return 'B'; }
+                if (percentage < A) { return 'A'; }
+                if (percentage < 2*A) { return 'B'; }
                 if (percentage < 3*A) { return 'C'; }
                 if (percentage < 4*A) { return 'D'; }
                 
