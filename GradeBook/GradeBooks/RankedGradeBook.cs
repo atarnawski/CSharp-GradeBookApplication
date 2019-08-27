@@ -14,6 +14,7 @@ namespace GradeBook.GradeBooks
         public override char GetLetterGrade(double averageGrade)
         {
             var counter = 0;
+            double X = Students.Count;
             var A = 0.2 * Students.Count;
             var B = 0.4 * Students.Count;
             var C = 0.6 * Students.Count;
@@ -33,15 +34,14 @@ namespace GradeBook.GradeBooks
                     averageList.Add(student.AverageGrade);
                 }
                 averageList.Sort();
-                foreach(var averageGradeList in averageList)
+                foreach(var averageGradeInList in averageList)
                 {
-                    if(averageGrade <= averageGradeList) { break; }
-                    counter++;
+                    if(averageGrade >= averageGradeInList) { X -= A; }
                 }
-                if (counter <= A) { return 'A'; }
-                if (counter > A || counter <= B) { return 'B'; }
-                if (counter > B || counter <= C) { return 'C'; }
-                if (counter > C || counter <= D) { return 'D'; }
+                if (X <= A) { return 'A'; }
+                if (X > A || X <= B) { return 'B'; }
+                if (X > B || X <= C) { return 'C'; }
+                if (X > C || X <= D) { return 'D'; }
             }
             return 'F';
         }
