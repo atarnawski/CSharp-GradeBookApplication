@@ -17,8 +17,6 @@ namespace GradeBook.GradeBooks
             var percentage = 0d;
             var A = 0.2;
 
-
-
             if (Students.Count < 5)
             {
                 throw new InvalidOperationException();
@@ -41,10 +39,24 @@ namespace GradeBook.GradeBooks
                 if (percentage < A) { return 'A'; }
                 else if (percentage < 2*A) { return 'B'; }
                 else if (percentage < 3*A) { return 'C'; }
-                else if (percentage < 4*A) { return 'D'; }
-                
+                else if (percentage < 4*A) { return 'D'; }            
             }
             return 'F';
         }
+        public override void CalculateStatistics()
+        {
+            if(Students.Count < 5)
+            {
+                Console.WriteLine("Ranked grading requires at least 5 students with grades in order to properly calculate a student's overall grade.");
+            }
+            else
+            {
+                base.CalculateStatistics();
+            }
+
+        }
+
+
+
     }
 }
