@@ -37,7 +37,7 @@ namespace GradeBook.GradeBooks
                     if(averageGrade >= averageGradeInList) { break; }
                     counter++;
                 }
-                percentage = counter / Students.Count;
+                Math.Ceiling(percentage = counter / Students.Count);
                 if (percentage < A) { return 'A'; }
                 if (percentage < 2*A) { return 'B'; }
                 if (percentage < 3*A) { return 'C'; }
